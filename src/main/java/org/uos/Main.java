@@ -21,14 +21,12 @@ public class Main {
             Scanner input = new Scanner(System.in);
             System.out.print("\n Enter a choice and Press ENTER to continue[1-5]:");
             userInput = input.nextByte();
-            System.out.println("\n second choice");
-            userInput2 = input.nextByte();
 
             switch (userInput) {
                 case 1 -> Store.addItem();
                 case 2 -> System.out.println("Item Quantity updated");
                 case 3 -> System.out.println("Item Removed");
-                case 4 -> Store.parseFile("src/main/resources/items.txt", userInput2);
+                case 4 -> Store.parseFile("src/main/resources/items.txt");
                 default -> System.out.println("This is not a valid option, please try again!");
             }
         }
