@@ -15,7 +15,7 @@ public class Store {
      * Stuff into own list so can be repeatedly called and matched to lines when printing
      * Print each line of CSV matching the index of headers array list to data
      **/
-    public static void parseFile(String filePath) throws FileNotFoundException {
+    public static void parseFile(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             String[] headers = br.readLine().split(",");
@@ -41,7 +41,7 @@ public class Store {
      **/
 
 
-    public static void addItem() throws IOException {
+    public static void addItem() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter item description: ");
 
@@ -55,30 +55,39 @@ public class Store {
         float totalPrice = unitPrice * qtyInStock;
         keyboard.nextLine();
 
-        DataStorage itemsToAdd = new DataStorage(description, unitPrice, qtyInStock, totalPrice);
-        writeItem("src/main/resources/items.txt");
+        Record itemsToAdd = new Record(description, unitPrice, qtyInStock, totalPrice);
+        writeItem("src/main/resources/items.txt", itemsToAdd);
     }
 
-    public static void writeItem(String filePath) throws IOException {
+    public static void writeItem(String filePath, Record item) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-            String[] items = new String[5];
-            items[0] = genID(filePath);
-            items[1] = itemsToAdd.description;
-            items[2] = String.valueOf(unitPrice);
-            items[3] = String.valueOf(qtyInStock);
-            items[4] = String.valueOf(totalPrice);
+            String items = genID(filePath) + "," +
+                    item.description + "," +
+                    item.unitPrice + "," +
+                    item.qtyInStock + "," +
+                    item.totalPrice;
+            System.out.println(items);
 
-            bw.newLine();
-            bw.write(Arrays.toString(items));
+//            bw.newLine();
+//            bw.write(items);
         } catch (Exception e) {
          e.getStackTrace();
         }
     }
 
-    public static String genID(String filePath) throws IOException {
-        ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(filePath));
-        String[] lastLine = fr.readLine().split(",");
-        return String.format("%05d", Integer.parseInt(lastLine[0] + 1));
+    public static String genID(String filePath) {
+        String[] lastLine = new String[5];
+        int num = 0;
+        String string= null;
+        try (ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(filePath))) {
+            lastLine = fr.readLine().split(",");
+            System.out.println(Arrays.toString(lastLine));
+             num = Integer.parseInt(lastLine[0])+ 1;
+             string = String.format("%05d", num);
+        } catch (Exception e) {
+            e.getStackTrace();
+        }
+        return string;
     }
 }
 

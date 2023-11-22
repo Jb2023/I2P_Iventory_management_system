@@ -5,23 +5,14 @@ import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
-public class Main {
+public class InventoryManagement {
 
 
-    public static void main(String[] args) throws FileNotFoundException {
-        userInterface.renderGUI();
-        userChoice();
-        System.out.println("\n\n Thanks for using this program...!");
+    public static void main(String[] args) {
+        userInterface.userControl();
     }
 
-    public static void userChoice() throws FileNotFoundException {
-        byte userInput = 0;
-        byte userInput2;
-        while (userInput > 5 || userInput < 1) {
-            Scanner input = new Scanner(System.in);
-            System.out.print("\n Enter a choice and Press ENTER to continue[1-5]:");
-            userInput = input.nextByte();
-
+    public static void userChoice(byte userInput) {
             switch (userInput) {
                 case 1 -> Store.addItem();
                 case 2 -> System.out.println("Item Quantity updated");
@@ -31,6 +22,3 @@ public class Main {
             }
         }
     }
-
-
-}

@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/uos/DataStorage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/I2P_Iventory_management_system.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_11_2023_10_00_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_08_11_2023_10_00__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Fixing up writing">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/DataStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Main.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,10 +29,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Jb2023"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="6cec4079-a664-45fb-9099-f95c97e9e76a" />
+        <option name="url" value="https://github.com/Jb2023/I2P_Iventory_management_system.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2YD54wa3wm3sy7mL14SVY2uDP65" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -49,6 +56,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "last_opened_file_path": "C:/Users/s257048/Documents/programming",
@@ -56,13 +64,14 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.uos.Main" />
+    <configuration name="InventoryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.uos.InventoryManagement" />
       <module name="I2P_Inventory_management_system" />
       <extension name="coverage">
         <pattern>
@@ -76,7 +85,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.InventoryManagement" />
       </list>
     </recent_temporary>
   </component>
@@ -88,11 +97,51 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1700047125288</updated>
-      <workItem from="1700047127652" duration="4177000" />
+      <workItem from="1700047127652" duration="4313000" />
+      <workItem from="1700647334852" duration="8058000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixing up writing">
+      <option name="closed" value="true" />
+      <created>1700051407352</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700051407352</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixing up writing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing up writing" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Store.java</url>
+          <line>17</line>
+          <properties class="org.uos.Store" method="parseFile">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
