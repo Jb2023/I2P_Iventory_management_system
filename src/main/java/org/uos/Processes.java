@@ -1,11 +1,9 @@
 package org.uos;
 
-import org.apache.commons.io.input.ReversedLinesFileReader;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
-public class Store {
+public class Processes {
 
     /**
      * File parser to read each line from the csv.
@@ -35,12 +33,8 @@ public class Store {
     }
 
     /**
-     * constructor to populate variables with item data
-     * can be used for a few things I hope other than writing to files
-     * otherwise a secure way of handling data.
+     addItem() takes user input and creates an itemsToAdd object populated with data.
      **/
-
-
     public static void addItem() {
         Scanner keyboard = new Scanner(System.in);
         System.out.println("Enter item description: ");
@@ -59,35 +53,53 @@ public class Store {
         writeItem("src/main/resources/items.txt", itemsToAdd);
     }
 
-    public static void writeItem(String filePath, Record item) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-            String items = genID(filePath) + "," +
-                    item.description + "," +
-                    item.unitPrice + "," +
-                    item.qtyInStock + "," +
-                    item.totalPrice;
-            System.out.println(items);
-
-//            bw.newLine();
-//            bw.write(items);
+    /**
+     writeItem() takes a filepath and items record from addItem() and writes it to the items csv file.
+     This implements the BufferedWriter and FileWriter methods to open the file and write to it in a
+     memory efficient manner.
+     **/
+    public static void writeItem(String filePath, Record itemsTooAdd) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,true))) {
+            String newID = genID(filePath);
+            String items =  newID + "," +
+                    itemsTooAdd.description + "," +
+                    itemsTooAdd.unitPrice + "," +
+                    itemsTooAdd.qtyInStock + "," +
+                    itemsTooAdd.totalPrice;
+            System.out.println("New entry " + itemsTooAdd.description + " added!\n" + items);
+            bw.newLine();
+            bw.write(items);
         } catch (Exception e) {
          e.getStackTrace();
         }
     }
 
-    public static String genID(String filePath) {
+    /**
+     Generates an ID for a new entry to the items CSV by reading through it and extracting the last ID.
+     The last ID once extracted is incremented by one and is formatted within the space of 5 zeros.
+     Once formatted the ID is then returned.
+     **/
+
+     public static String genID(String filePath) {
+        String string;
+        String line;
         String[] lastLine = new String[5];
-        int num = 0;
-        String string= null;
-        try (ReversedLinesFileReader fr = new ReversedLinesFileReader(new File(filePath))) {
-            lastLine = fr.readLine().split(",");
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
+            while ((line = br.readLine()) != null) {
+                lastLine = line.split(",");
+            }
             System.out.println(Arrays.toString(lastLine));
-             num = Integer.parseInt(lastLine[0])+ 1;
-             string = String.format("%05d", num);
         } catch (Exception e) {
             e.getStackTrace();
+        } finally {
+            int num = Integer.parseInt(lastLine[0])+ 1;
+            string = String.format("%05d", num);
         }
         return string;
+    }
+
+    public static String findItem(String itemType) {
+         return null;
     }
 }
 

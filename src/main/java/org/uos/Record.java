@@ -1,5 +1,9 @@
 package org.uos;
 
+/**
+ A constructor used to populate new record entries.
+ Used in Store.addItem() and is populated by user input into Java.
+ **/
 class Record {
     String description;
     float unitPrice, qtyInStock, totalPrice;
@@ -9,6 +13,5 @@ class Record {
         this.qtyInStock = qtyInStock;
         this.totalPrice = totalPrice;
     }
-
 
 }

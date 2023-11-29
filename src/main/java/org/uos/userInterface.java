@@ -23,7 +23,7 @@ public class userInterface {
        ║1. ADD NEW ITEM                                        ║
        ║2. UPDATE QUANTITY OF EXISTING ITEM                    ║
        ║3. REMOVE ITEM                                         ║
-       ║4. VIEW DAILY TRANSACTION REPORT                       ║
+       ║4. DISPLAY INVENTORY OR TRANSACTIONS                   ║
        ╠═══════════════════════════════════════════════════════╣
        ║5. Exit                                                ║
        ╚═══════════════════════════════════════════════════════╝
