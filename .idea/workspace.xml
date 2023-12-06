@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Trying to fix gen id!!!">
+    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Wow I can add items now!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Store.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/transactions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Store.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +95,8 @@
       <updated>1700047125288</updated>
       <workItem from="1700047127652" duration="4313000" />
       <workItem from="1700647334852" duration="8109000" />
-      <workItem from="1701251560544" duration="6854000" />
+      <workItem from="1701251560544" duration="8263000" />
+      <workItem from="1701856971220" duration="5608000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing up writing">
       <option name="closed" value="true" />
@@ -116,7 +114,15 @@
       <option name="project" value="LOCAL" />
       <updated>1700656453480</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Wow I can add items now!!!">
+      <option name="closed" value="true" />
+      <created>1701260770211</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701260770211</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +142,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixing up writing" />
     <MESSAGE value="Trying to fix gen id!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to fix gen id!!!" />
+    <MESSAGE value="Wow I can add items now!!!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Wow I can add items now!!!" />
   </component>
 </project>

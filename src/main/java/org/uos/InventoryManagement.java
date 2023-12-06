@@ -9,7 +9,7 @@ public class InventoryManagement {
         userInterface.userControl();
     }
 
-    public static void userChoice(byte userInput) {
+    public void userChoice(byte userInput) {
             switch (userInput) {
                 case 1 -> Processes.addItem();
                 case 2 -> System.out.println("Item Quantity updated");
