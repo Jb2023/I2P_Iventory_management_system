@@ -1,11 +1,13 @@
 package org.uos;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
+import java.util.List;
 import java.util.Scanner;
 class Processes {
-private String[][] records;
+    ArrayList<List<String>> records = new ArrayList<>();
+
     /**
      * File parser to read each line from the csv.
      * Uses Buffered Reader for speed and memory efficiency
@@ -21,8 +23,9 @@ private String[][] records;
             int index = 0;
             System.out.println(Arrays.toString(headers));
             while ((line = br.readLine()) != null) {
-                records[++index] = line.split(",");
+                records.add(List.of(line.split(",")));
             }
+            System.out.println(records);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -43,7 +46,7 @@ private String[][] records;
         float qtyInStock = keyboard.nextFloat();
         float totalPrice = unitPrice * qtyInStock;
         keyboard.nextLine();
-
+        System.out.println(description + unitPrice + qtyInStock + totalPrice);
         Record itemsToAdd = new Record(description, unitPrice, qtyInStock, totalPrice);
         writeItem("src/main/resources/items.txt", itemsToAdd);
     }
@@ -53,19 +56,21 @@ private String[][] records;
      This implements the BufferedWriter and FileWriter methods to open the file and write to it in a
      memory efficient manner.
      **/
-    public void writeItem(String filePath, Record itemsTooAdd) {
+    public void writeItem(String filePath, Record itemsToAdd) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,true))) {
             String newID = genID();
             String items =  newID + "," +
-                    itemsTooAdd.description + "," +
-                    itemsTooAdd.unitPrice + "," +
-                    itemsTooAdd.qtyInStock + "," +
-                    itemsTooAdd.totalPrice;
-            System.out.println("New entry " + itemsTooAdd.description + " added!\n" + items);
+                    itemsToAdd.description + "," +
+                    itemsToAdd.unitPrice + "," +
+                    itemsToAdd.qtyInStock + "," +
+                    itemsToAdd.totalPrice;
+            System.out.println("New entry " + itemsToAdd.description + " added!\n" + items);
             bw.newLine();
             bw.write(items);
+
+
         } catch (Exception e) {
-         e.getStackTrace();
+            throw new RuntimeException(e);
         }
     }
 
@@ -77,7 +82,7 @@ private String[][] records;
 
      public String genID() {
         String string;
-        int num = Integer.parseInt(records[records.length - 1][0])+ 1;
+        int num = Integer.parseInt(records.get(records.size() - 1).get(0))+ 1;
         string = String.format("%05d", num);
         return string;
     }

@@ -8,7 +8,13 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Record.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transactions.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +29,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -96,7 +107,8 @@
       <workItem from="1700047127652" duration="4313000" />
       <workItem from="1700647334852" duration="8109000" />
       <workItem from="1701251560544" duration="8263000" />
-      <workItem from="1701856971220" duration="5608000" />
+      <workItem from="1701856971220" duration="5671000" />
+      <workItem from="1702461000431" duration="7355000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing up writing">
       <option name="closed" value="true" />
@@ -122,7 +134,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701260770211</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Wow I can add items now!!!">
+      <option name="closed" value="true" />
+      <created>1701865881124</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701865881124</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
