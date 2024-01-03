@@ -23,9 +23,7 @@ class Processes {
                 list.add(fileItem);
             }
             for (List<String> record : list) {
-                for (int j = 0; j < record.size(); j++) {
-                    record.set(j, record.get(j).replace(" ", ""));
-                }
+                record.replaceAll(s -> s.replace(" ", ""));
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
