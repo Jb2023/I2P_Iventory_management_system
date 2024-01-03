@@ -6,8 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Finished CLI version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/transactions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transactions.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +117,7 @@
       <workItem from="1704036130799" duration="6635000" />
       <workItem from="1704155761830" duration="8888000" />
       <workItem from="1704197032004" duration="29049000" />
-      <workItem from="1704307195183" duration="715000" />
+      <workItem from="1704307195183" duration="9660000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing up writing">
       <option name="closed" value="true" />
@@ -150,7 +159,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704307822840</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finished CLI version">
+      <option name="closed" value="true" />
+      <created>1704307985794</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704307985794</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,29 +194,10 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>37</line>
-          <properties class="org.uos.Processes" method="addItem">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>129</line>
-          <properties class="org.uos.Processes" method="updateQuantity">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>38</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

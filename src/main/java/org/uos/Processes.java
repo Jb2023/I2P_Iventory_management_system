@@ -4,7 +4,7 @@ import java.io.*;
 import java.util.*;
 class Processes {
     public static ArrayList<List<String>> records = new ArrayList<>();
-
+    public static  ArrayList<List<String>> transactionRecord = new ArrayList<>();
     /**
      * File parser to read each line from the csv.
      * Uses Buffered Reader for speed and memory efficiency
@@ -13,17 +13,16 @@ class Processes {
      * Stuff into own list so can be repeatedly called and matched to lines when printing
      * Print each line of CSV matching the index of headers array list to data
      **/
-    public void parseFile(String filePath) {
+    public void parseFile(String filePath, ArrayList<List<String>> list) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            records.clear();
-
+            list.clear();
             while ((line = br.readLine()) != null) {
                 List<String> fileItem = Arrays.asList(line.split(","));
 
-                records.add(fileItem);
+                list.add(fileItem);
             }
-            for (List<String> record : records) {
+            for (List<String> record : list) {
                 for (int j = 0; j < 5; j++) {
                     record.set(j, record.get(j).replace(" ", ""));
                 }
@@ -32,8 +31,10 @@ class Processes {
             throw new RuntimeException(e);
         }
     }
+
     /**
      addItem() takes user input and creates an itemsToAdd object populated with data.
+     addItem uses Record class to construct string of an item record to add.
      **/
     public void addItem() {
         Scanner keyboard = new Scanner(System.in);
@@ -57,7 +58,7 @@ class Processes {
      This implements the BufferedWriter and FileWriter methods to open the file and write to it in a
      memory efficient manner.
      **/
-    public void writeItem(Record itemsToAdd) {
+    private void writeItem(Record itemsToAdd) {
         String newID = genID();
         String items =  newID + "," +
                 itemsToAdd.description + "," +
@@ -67,16 +68,38 @@ class Processes {
         List<String> itemsList = Arrays.asList(items);
         records.add(itemsList);
         System.out.println("New entry " + itemsToAdd.description + " added!\n" + items);
-        writeCSV("src/main/resources/items.txt");
+        writeCSV("src/main/resources/items.txt", records);
     }
 
-    public void writeCSV(String filePath) {
+    /**
+     A method that write transactions
+     Take the changeflag, quantity and findItemResult from changeQuantity().
+     This places them into a new
+      **/
+    private void writeTransaction(int changeFlag, int quantity, int findItemResult) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/transactions.txt",false))) {
+            float totalSales = Float.parseFloat(records.get(findItemResult).get(3)) * quantity;
+            String transaction = records.get(findItemResult).get(1) + "," +
+            records.get(findItemResult).get(0) + "," +
+            records.get(findItemResult).get(1) + "," + quantity;
+            if (changeFlag == 1) {
+                transaction += "," + "0" + "," + "added";
+            } else {
+                transaction += "," + totalSales + "," + "removed";
+            }
+            List<String> transactionList = Arrays.asList(transaction);
+            transactionRecord.add(transactionList);
+            writeCSV("src/main/resources/transactions.txt", transactionRecord);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    private void writeCSV(String filePath, ArrayList<List<String>> recordType) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,false))) {
-            for (List<String> record : records) {
+            for (List<String> record : recordType) {
                 bw.write(String.valueOf(record).replace("[", "").replace("]", ""));
                 bw.newLine();
             }
-            records.clear();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -123,15 +146,13 @@ class Processes {
         } else {
             System.out.println("Removing Record: " + records.get(findItemResult));
             records.remove(findItemResult);
-            writeCSV("src/main/resources/items.txt");
+            writeCSV("src/main/resources/transactions.txt", records);
         }
      }
 
      public void updateQuantity() {
          String itemName;
-         int quantity;
-         int changeFlag;
-         int changeResult = 0;
+         int quantity, changeFlag, changeResult = 0;
          int currentQuantity;
 
          System.out.println("Update item quantity");
@@ -169,7 +190,8 @@ class Processes {
          } else {
              System.out.println("Changing quantity from " + currentQuantity + " to " + changeResult);
              records.get(findItemResult).set(3, String.valueOf(changeResult));
-             writeCSV("src/main/resources/items.txt");
+             writeCSV("src/main/resources/transactions.txt", records);
+             writeTransaction(changeFlag, quantity, findItemResult);
          }
      }
 }

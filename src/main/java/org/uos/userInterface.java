@@ -1,5 +1,8 @@
 package org.uos;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class userInterface {
     public void renderInterface() {
         System.out.println("""
@@ -9,17 +12,18 @@ public class userInterface {
        ║1. ADD NEW ITEM                                        ║
        ║2. UPDATE QUANTITY OF EXISTING ITEM                    ║
        ║3. REMOVE ITEM                                         ║
-       ║4. DISPLAY INVENTORY OR TRANSACTIONS                   ║
+       ║4. DISPLAY INVENTORY                                   ║
+       ║5. DISPLAY TRANSACTIONS                                ║
        ╠═══════════════════════════════════════════════════════╣
-       ║5. Exit                                                ║
+       ║6. Exit                                                ║
        ╚═══════════════════════════════════════════════════════╝
         """);
     }
 
-    public void viewInventory() {
+    public void viewInventory(ArrayList<List<String>> recordType) {
         System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
-        for (int i = 0; i < Processes.records.size(); i++) {
-            for (String field: Processes.records.get(i)) {
+        for (int i = 0; i < recordType.size(); i++) {
+            for (String field: recordType.get(i)) {
                 System.out.printf("%-15s", field);
             }
             System.out.println("");
