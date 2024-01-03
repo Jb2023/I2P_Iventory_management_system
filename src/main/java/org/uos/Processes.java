@@ -76,7 +76,6 @@ class Processes {
      This places them into a new list to be appended to the transactionsList ArrayList
      **/
     private void writeTransaction(int changeFlag, int quantity, int findItemResult) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/transactions.txt",false))) {
             float totalSales = Float.parseFloat(records.get(findItemResult).get(3)) * quantity;
 
             String transaction = records.get(findItemResult).get(1) + "," +
@@ -91,9 +90,6 @@ class Processes {
             List<String> transactionList = Arrays.asList(transaction);
             transactionRecord.add(transactionList);
             writeCSV("src/main/resources/transactions.txt", transactionRecord);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
     }
 
     /**
