@@ -6,13 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Wow I can add items now!!!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/transactions.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/items.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Record.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Record.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transactions.txt" afterDir="false" />
     </list>
@@ -31,7 +34,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,8 +48,8 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="6cec4079-a664-45fb-9099-f95c97e9e76a" />
-        <option name="url" value="https://github.com/Jb2023/I2P_Iventory_management_system.git" />
+        <option name="accountId" value="ab7701ac-51bb-4f39-8eda-86e9f8005c20" />
+        <option name="url" value="https://github.com/Jb2023/I2P_Iventory_management_system" />
       </UrlAndAccount>
     </option>
   </component>
@@ -55,27 +58,29 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2YD54wa3wm3sy7mL14SVY2uDP65" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/s257048/Documents/programming&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/s257048/Documents/programming",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="InventoryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.uos.InventoryManagement" />
@@ -109,6 +114,10 @@
       <workItem from="1701251560544" duration="8263000" />
       <workItem from="1701856971220" duration="5671000" />
       <workItem from="1702461000431" duration="7355000" />
+      <workItem from="1703868151098" duration="10156000" />
+      <workItem from="1704036130799" duration="6635000" />
+      <workItem from="1704155761830" duration="8888000" />
+      <workItem from="1704197032004" duration="29049000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing up writing">
       <option name="closed" value="true" />
@@ -164,5 +173,34 @@
     <MESSAGE value="Trying to fix gen id!!!" />
     <MESSAGE value="Wow I can add items now!!!" />
     <option name="LAST_COMMIT_MESSAGE" value="Wow I can add items now!!!" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
+          <line>38</line>
+          <properties class="org.uos.Processes" method="addItem">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
+          <line>130</line>
+          <properties class="org.uos.Processes" method="updateQuantity">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,11 +1,12 @@
 package org.uos;
 
-import java.util.Scanner;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class userInterface {
-
-
-
     public void renderInterface() {
         System.out.println("""
        ╔═══════════════════════════════════════════════════════╗
@@ -19,6 +20,17 @@ public class userInterface {
        ║5. Exit                                                ║
        ╚═══════════════════════════════════════════════════════╝
         """);
+    }
+
+    public void viewInventory() {
+        System.out.println("╔═══════════════════════════════════════════════════════════════════════════╗");
+        for (int i = 0; i < Processes.records.size(); i++) {
+            for (String field: Processes.records.get(i)) {
+                System.out.printf("%-15s", field);
+            }
+            System.out.println("");
+        }
+        System.out.println("╚═══════════════════════════════════════════════════════════════════════════╝");
     }
 
 

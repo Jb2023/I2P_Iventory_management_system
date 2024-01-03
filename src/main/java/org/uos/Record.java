@@ -2,7 +2,7 @@ package org.uos;
 
 /**
  A constructor used to populate new record entries.
- Used in Store.addItem() and is populated by user input into Java.
+ Used in Processes.addItem() and is populated by user input into Java.
  **/
 class Record {
     String description;

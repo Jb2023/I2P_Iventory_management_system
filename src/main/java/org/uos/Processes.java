@@ -1,12 +1,9 @@
 package org.uos;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 class Processes {
-    ArrayList<List<String>> records = new ArrayList<>();
+    public static ArrayList<List<String>> records = new ArrayList<>();
 
     /**
      * File parser to read each line from the csv.
@@ -19,13 +16,19 @@ class Processes {
     public void parseFile(String filePath) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
-            String[] headers = br.readLine().split(",");
-            int index = 0;
-            System.out.println(Arrays.toString(headers));
+            records.clear();
+            int counter = 0;
+
             while ((line = br.readLine()) != null) {
-                records.add(List.of(line.split(",")));
+                List<String> fileItem = Arrays.asList(line.split(","));
+
+                records.add(fileItem);
             }
-            System.out.println(records);
+            for (int i = 0; i < records.size(); i++) {
+                for (int j = 0; j < 5; j++) {
+                    records.get(i).set(j, records.get(i).get(j).replace(" ", ""));
+                }
+            }
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -46,8 +49,7 @@ class Processes {
         float qtyInStock = keyboard.nextFloat();
         float totalPrice = unitPrice * qtyInStock;
         keyboard.nextLine();
-        System.out.println(description + unitPrice + qtyInStock + totalPrice);
-        Record itemsToAdd = new Record(description, unitPrice, qtyInStock, totalPrice);
+        Record itemsToAdd = new Record(description, unitPrice, (int) qtyInStock, totalPrice);
         writeItem("src/main/resources/items.txt", itemsToAdd);
     }
 
@@ -57,18 +59,25 @@ class Processes {
      memory efficient manner.
      **/
     public void writeItem(String filePath, Record itemsToAdd) {
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,true))) {
-            String newID = genID();
-            String items =  newID + "," +
-                    itemsToAdd.description + "," +
-                    itemsToAdd.unitPrice + "," +
-                    itemsToAdd.qtyInStock + "," +
-                    itemsToAdd.totalPrice;
-            System.out.println("New entry " + itemsToAdd.description + " added!\n" + items);
-            bw.newLine();
-            bw.write(items);
+        String newID = genID();
+        String items =  newID + "," +
+                itemsToAdd.description + "," +
+                itemsToAdd.unitPrice + "," +
+                itemsToAdd.qtyInStock + "," +
+                itemsToAdd.totalPrice;
+        List<String> itemsList = Arrays.asList(items);
+        records.add(itemsList);
+        System.out.println("New entry " + itemsToAdd.description + " added!\n" + items);
+        writeCSV("src/main/resources/items.txt");
+    }
 
-
+    public void writeCSV(String filePath) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,false))) {
+            for (int i = 0; i < records.size(); i++) {
+                bw.write(String.valueOf(records.get(i)).replace("[", "").replace("]", ""));
+                bw.newLine();
+            }
+            records.clear();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -86,26 +95,84 @@ class Processes {
         string = String.format("%05d", num);
         return string;
     }
-//    public static String findItem(String itemType) {
-//         itemType = itemType.toLowerCase(); //forces input consistency with
-//         String filePath = "";
-//        try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-//            String result;
-//            String line;
-//            while ((line = br.readLine()) != null) {
-//                String[] values = line.split(",");
-//                if (Objects.equals(values[1], itemType)) {
-//                    result  = Arrays.toString(values);
-//                } else {
-//                    result = "Item not found";
-//                }
-//            }
-//        } catch (IOException e) {
-//            throw new RuntimeException(e);
-//        } finally {
-//
-//        }
-//        return result;
-//    }
+
+    public int findItem(String itemType) {
+        int result = 0;
+        for (int i = 0; i < records.size(); i++) {
+            if (records.get(i).get(1).contains(itemType)) {
+                return i;
+            } else {
+                result = -1;
+            }
+        }
+        return result;
+    }
+
+    public void removeItem() {
+         //initialise a user input variable
+        String userInput;
+
+        System.out.println("Please enter an item name exactly: ");
+        //Open scanner to read user input from command line
+        Scanner input = new Scanner(System.in);
+        userInput = input.nextLine();
+
+        //find index of record that matches user input, report if exists and if yes remove it.
+        int findItemResult = findItem(userInput);
+        if (findItemResult == -1) {
+            System.out.println("Item not found");
+        } else {
+            System.out.println("Removing Record: " + records.get(findItemResult));
+            records.remove(findItemResult);
+            writeCSV("src/main/resources/items.txt");
+        }
+     }
+
+     public void updateQuantity() {
+         String itemName;
+         int quantity;
+         int changeFlag;
+         int changeResult = 0;
+         int currentQuantity;
+
+         System.out.println("Update item quantity");
+
+         //Open scanner to read user input from command line
+         Scanner input = new Scanner(System.in);
+
+         System.out.println("Please enter an item name exactly: ");
+         itemName = input.nextLine();
+
+         int findItemResult = findItem(itemName);
+         if (findItemResult == -1) {
+             System.out.println("Item not found");
+             return;
+         }
+
+         System.out.println("1 to Add quantity, 2 to remove quantity");
+         changeFlag = input.nextInt();
+
+         System.out.println("Enter quantity");
+         quantity = (int) input.nextFloat();
+
+         currentQuantity = (int) Double.parseDouble(records.get(findItemResult).get(3));
+
+         if (changeFlag == 1) {
+             changeResult = (int) (currentQuantity + quantity);
+         } else if (changeFlag == 2) {
+             changeResult = (int) (currentQuantity - quantity);
+         } else {
+             System.out.println("Error, enter a number between 1 and 2");
+         }
+
+         if (changeResult < 0) {
+             System.out.println("Error, quantity change goes below 0");
+             return;
+         } else {
+             System.out.println("Changing quantity from " + currentQuantity + " to " + changeResult);
+             records.get(findItemResult).set(3, String.valueOf(changeResult));
+             writeCSV("src/main/resources/items.txt");
+         }
+     }
 }
 
