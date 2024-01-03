@@ -9,7 +9,12 @@ public class InventoryManagement {
     static boolean activeSession = true;
 
     public static void main(String[] args) {userControl();}
-
+    /**
+     userControl() class instantiates user interface
+     uses loop to control program flow
+     user can select multiple options by sending user input to userChoice()
+     user can terminate program too.
+     **/
     private static void userControl() {
         while (activeSession) {
             ui.renderInterface();
@@ -21,7 +26,9 @@ public class InventoryManagement {
             userChoice(userInput);
         }
     }
-
+    /**
+     class containing switch statement allowing user to control flow of application
+     **/
     public static void userChoice(byte userInput) {
         pr.parseFile("src/main/resources/items.txt", Processes.records);
         pr.parseFile("src/main/resources/transactions.txt", Processes.transactionRecord);

@@ -1,1 +1,3 @@
-item10,00010,item10,10,0,added
+description, id, salesEarned, quantity, transactionType
+item10, 00010, 230.45, 10, added
+item10,00010,10,200.0,removed

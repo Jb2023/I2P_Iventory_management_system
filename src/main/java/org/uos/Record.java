@@ -13,6 +13,4 @@ class Record {
         this.qtyInStock = qtyInStock;
         this.totalPrice = totalPrice;
     }
-
-}
 }

@@ -6,12 +6,12 @@ class Processes {
     public static ArrayList<List<String>> records = new ArrayList<>();
     public static  ArrayList<List<String>> transactionRecord = new ArrayList<>();
     /**
-     * File parser to read each line from the csv.
-     * Uses Buffered Reader for speed and memory efficiency
-     * Grab each line of CSV, stuff into array list.
-     * First before looping over file will be the headers row
-     * Stuff into own list so can be repeatedly called and matched to lines when printing
-     * Print each line of CSV matching the index of headers array list to data
+     File parser to read each line from the csv.
+     Uses Buffered Reader for speed and memory efficiency
+     Grab each line of CSV, stuff into array list.
+     First before looping over file will be the headers row
+     Stuff into own list so can be repeatedly called and matched to lines when printing
+     Print each line of CSV matching the index of headers array list to data
      **/
     public void parseFile(String filePath, ArrayList<List<String>> list) {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
@@ -23,7 +23,7 @@ class Processes {
                 list.add(fileItem);
             }
             for (List<String> record : list) {
-                for (int j = 0; j < 5; j++) {
+                for (int j = 0; j < record.size(); j++) {
                     record.set(j, record.get(j).replace(" ", ""));
                 }
             }
@@ -54,9 +54,8 @@ class Processes {
     }
 
     /**
-     writeItem() takes a filepath and items record from addItem() and writes it to the items csv file.
-     This implements the BufferedWriter and FileWriter methods to open the file and write to it in a
-     memory efficient manner.
+     writeItem() takes an object instantiated by the addItem() and builds a
+     list of strings to be applied to the records ArrayList
      **/
     private void writeItem(Record itemsToAdd) {
         String newID = genID();
@@ -73,15 +72,17 @@ class Processes {
 
     /**
      A method that write transactions
-     Take the changeflag, quantity and findItemResult from changeQuantity().
-     This places them into a new
-      **/
+     Take the change flag, quantity and findItemResult from changeQuantity().
+     This places them into a new list to be appended to the transactionsList ArrayList
+     **/
     private void writeTransaction(int changeFlag, int quantity, int findItemResult) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("src/main/resources/transactions.txt",false))) {
             float totalSales = Float.parseFloat(records.get(findItemResult).get(3)) * quantity;
+
             String transaction = records.get(findItemResult).get(1) + "," +
-            records.get(findItemResult).get(0) + "," +
-            records.get(findItemResult).get(1) + "," + quantity;
+                    records.get(findItemResult).get(0) + "," +
+                    quantity;
+
             if (changeFlag == 1) {
                 transaction += "," + "0" + "," + "added";
             } else {
@@ -94,6 +95,10 @@ class Processes {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     Writes a CSV file based on the file path and the ArrayList being called with a BufferedWriter
+     **/
     private void writeCSV(String filePath, ArrayList<List<String>> recordType) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,false))) {
             for (List<String> record : recordType) {
@@ -110,7 +115,6 @@ class Processes {
      The last ID once extracted is incremented by one and is formatted within the space of 5 zeros.
      Once formatted the ID is then returned.
      **/
-
      public String genID() {
         String string;
         int num = Integer.parseInt(records.get(records.size() - 1).get(0))+ 1;
@@ -118,6 +122,10 @@ class Processes {
         return string;
     }
 
+    /**
+     Finds an item within the records ArrayList based on description. Used by updateQuantity() and
+     removeItem() to update records based on user input
+     **/
     public int findItem(String itemType) {
         int result = 0;
         for (int i = 0; i < records.size(); i++) {
@@ -130,6 +138,9 @@ class Processes {
         return result;
     }
 
+    /**
+     removes an item from the records ArrayList based on user input
+     **/
     public void removeItem() {
          //initialise a user input variable
         String userInput;
@@ -146,10 +157,12 @@ class Processes {
         } else {
             System.out.println("Removing Record: " + records.get(findItemResult));
             records.remove(findItemResult);
-            writeCSV("src/main/resources/transactions.txt", records);
+            writeCSV("src/main/resources/items.txt", records);
         }
      }
-
+    /**
+     updates Quantity in records ArrayList based on user input
+     **/
      public void updateQuantity() {
          String itemName;
          int quantity, changeFlag, changeResult = 0;
