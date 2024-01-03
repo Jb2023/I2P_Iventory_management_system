@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Wow I can add items now!!!">
+    <list default="true" id="829fdf81-0412-4e96-bd28-0b49de3f340e" name="Changes" comment="Finished CLI version">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/InventoryManagement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Processes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/Record.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/uos/userInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/transactions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/items.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/items.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/InventoryManagement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/Processes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/org/uos/userInterface.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/transactions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/transactions.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,24 +53,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/s257048/Documents/programming",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Console Font",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/s257048/Documents/programming&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.Console Font&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="InventoryManagement" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.uos.InventoryManagement" />
@@ -118,6 +108,7 @@
       <workItem from="1704036130799" duration="6635000" />
       <workItem from="1704155761830" duration="8888000" />
       <workItem from="1704197032004" duration="29049000" />
+      <workItem from="1704307195183" duration="715000" />
     </task>
     <task id="LOCAL-00001" summary="Fixing up writing">
       <option name="closed" value="true" />
@@ -151,7 +142,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701865881124</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished CLI version">
+      <option name="closed" value="true" />
+      <created>1704307822840</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1704307822840</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,14 +171,15 @@
     <MESSAGE value="Fixing up writing" />
     <MESSAGE value="Trying to fix gen id!!!" />
     <MESSAGE value="Wow I can add items now!!!" />
-    <option name="LAST_COMMIT_MESSAGE" value="Wow I can add items now!!!" />
+    <MESSAGE value="Finished CLI version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished CLI version" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>38</line>
+          <line>37</line>
           <properties class="org.uos.Processes" method="addItem">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -188,7 +188,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>130</line>
+          <line>129</line>
           <properties class="org.uos.Processes" method="updateQuantity">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -197,7 +197,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/uos/Processes.java</url>
-          <line>39</line>
+          <line>38</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>

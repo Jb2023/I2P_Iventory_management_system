@@ -17,16 +17,15 @@ class Processes {
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
             String line;
             records.clear();
-            int counter = 0;
 
             while ((line = br.readLine()) != null) {
                 List<String> fileItem = Arrays.asList(line.split(","));
 
                 records.add(fileItem);
             }
-            for (int i = 0; i < records.size(); i++) {
+            for (List<String> record : records) {
                 for (int j = 0; j < 5; j++) {
-                    records.get(i).set(j, records.get(i).get(j).replace(" ", ""));
+                    record.set(j, record.get(j).replace(" ", ""));
                 }
             }
         } catch (IOException e) {
@@ -50,7 +49,7 @@ class Processes {
         float totalPrice = unitPrice * qtyInStock;
         keyboard.nextLine();
         Record itemsToAdd = new Record(description, unitPrice, (int) qtyInStock, totalPrice);
-        writeItem("src/main/resources/items.txt", itemsToAdd);
+        writeItem(itemsToAdd);
     }
 
     /**
@@ -58,7 +57,7 @@ class Processes {
      This implements the BufferedWriter and FileWriter methods to open the file and write to it in a
      memory efficient manner.
      **/
-    public void writeItem(String filePath, Record itemsToAdd) {
+    public void writeItem(Record itemsToAdd) {
         String newID = genID();
         String items =  newID + "," +
                 itemsToAdd.description + "," +
@@ -73,8 +72,8 @@ class Processes {
 
     public void writeCSV(String filePath) {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath,false))) {
-            for (int i = 0; i < records.size(); i++) {
-                bw.write(String.valueOf(records.get(i)).replace("[", "").replace("]", ""));
+            for (List<String> record : records) {
+                bw.write(String.valueOf(record).replace("[", "").replace("]", ""));
                 bw.newLine();
             }
             records.clear();
@@ -158,16 +157,15 @@ class Processes {
          currentQuantity = (int) Double.parseDouble(records.get(findItemResult).get(3));
 
          if (changeFlag == 1) {
-             changeResult = (int) (currentQuantity + quantity);
+             changeResult = currentQuantity + quantity;
          } else if (changeFlag == 2) {
-             changeResult = (int) (currentQuantity - quantity);
+             changeResult = currentQuantity - quantity;
          } else {
              System.out.println("Error, enter a number between 1 and 2");
          }
 
          if (changeResult < 0) {
              System.out.println("Error, quantity change goes below 0");
-             return;
          } else {
              System.out.println("Changing quantity from " + currentQuantity + " to " + changeResult);
              records.get(findItemResult).set(3, String.valueOf(changeResult));
